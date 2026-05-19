@@ -7,7 +7,7 @@ let cachedUrl = null
 export async function getApiUrl() {
   if (cachedUrl) return cachedUrl
 
-  const response = await fetch('/agenda-app/config.json')
+  const response = await fetch(`${import.meta.env.BASE_URL}config.json`)
   if (!response.ok) throw new Error('No se pudo cargar config.json')
 
   const config = await response.json()

@@ -6,7 +6,7 @@
       <!-- Info actual -->
       <div class="card perfil-card">
         <div class="perfil-top">
-        <img v-if="auth.usuario?.foto" :src="`https://fullagenda.alwaysdata.net/${auth.usuario.foto}`" class="avatar avatar-lg" alt="foto"/>
+        <img v-if="auth.usuario?.foto" :src="`${API_BASE}/${auth.usuario.foto}`" class="avatar avatar-lg" alt="foto"/>
           <div v-else class="avatar-placeholder avatar-lg">
             {{ (auth.usuario?.nombre_de_usuario?.[0] || '?').toUpperCase() }}
           </div>
@@ -59,6 +59,7 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 
 const auth    = useAuthStore()
+const API_BASE = 'https://fullagenda.alwaysdata.net'
 const cargando = ref(false)
 const mensaje  = reactive({ texto: '', tipo: 'error' })
 

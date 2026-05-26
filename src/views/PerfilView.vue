@@ -59,7 +59,7 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 
 const auth    = useAuthStore()
-const API_BASE = 'https://fullagenda.alwaysdata.net/api'
+const API_BASE = 'https://aleajndro.alwaysdata.net/api'
 const cargando = ref(false)
 const mensaje  = reactive({ texto: '', tipo: 'error' })
 
